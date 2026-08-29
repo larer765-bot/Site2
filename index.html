@@ -604,7 +604,21 @@
               <li><strong>IBAN / RIB :</strong> TG53 TG00 0000 0000 0000 00</li>
             </ul>
           </div>
+      <!-- Bloc Carte & Mobile Money -->
+      <div class="card" style="padding:24px;">
+        <h3 style="margin-top:0; color:var(--gold);">Carte & Mobile</h3>
+        <p style="color:var(--muted); font-size:14px;">Visa, Mastercard, T-Money, Flooz</p>
+        <button id="pay-btn" style="background-color:#28a745; color:white; border:none; padding:12px 20px; border-radius:5px; cursor:pointer; font-weight:bold; width:100%;">
+          Payer par Carte / Mobile
+        </button>
+      </div>
 
+      <!-- Bloc PayPal -->
+      <div class="card" style="padding:24px;">
+        <h3 style="margin-top:0; color:var(--gold);">PayPal</h3>
+        <div id="paypal-button-container"></div>
+      </div>
+          
         </div>
       </div>
     </section>
@@ -771,6 +785,35 @@
     }
   });
 </script>
+  <!-- Scripts de Paiement -->
+  <script src="https://www.paypal.com/sdk/js?client-id=TON_CLIENT_ID_PAYPAL&currency=EUR"></script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: { value: '10.00' }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Paiement réussi ! Merci ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
 
+  <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+  <script>
+    FedaPay.init('#pay-btn', {
+      public_key: 'TA_CLE_PUBLIQUE_FEDAPAY',
+      transaction: {
+        amount: 1000,
+        description: 'Soutenir nos actions'
+      }
+    });
+  </script>
+          
 </body>
 </html>
