@@ -1,0 +1,562 @@
+Voici le fichier HTML intégral, propre et corrigé. Il intègre le Siège Social aux **États-Unis**, remplace la carte Coordinatrice par le **Conseiller** (avec la bonne image `conseillere.jpg`), conserve la **Directrice Exécutive** et le **Marketing Digital**, et referme correctement toutes les balises HTML coupées.
+
+Tu peux copier tout ce bloc et remplacer l'intégralité du contenu de ton fichier `index.html` sur GitHub :
+
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolidHand International</title>
+  <meta name="description" content="Bienvenue sur le site officiel de SolidHand International." />
+  <meta property="og:title" content="SolidHand International" />
+  <meta property="og:description" content="Bienvenue sur le site officiel de SolidHand International." />
+  <meta property="og:url" content="https://www.solidhandinternational.org" />
+  <meta property="og:type" content="website" />
+  <meta name="google-site-verification" content="E_BInr1ndgUx9PdOQAMVSNvqrViQT95wIrf9yoAFQ_0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4RG1505RE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P4RG1505RE');
+  </script>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121c33;
+      --text:#e9eefc;
+      --muted:#a9b4d6;
+      --gold:#d7b15a;
+      --blue:#1b4d8a;
+      --whatsapp:#25D366;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1000px 600px at 70% -10%, rgba(215,177,90,.25), transparent 55%),
+        radial-gradient(900px 500px at 10% 0%, rgba(27,77,138,.35), transparent 55%),
+        linear-gradient(180deg, #070c16 0%, var(--bg) 70%, #070c16 100%);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .logo{
+      width:52px; height:52px; border-radius:50%;
+      background:#fff; display:grid; place-items:center;
+      overflow:hidden; border:1px solid rgba(0,0,0,.15);
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand-title{display:flex; flex-direction:column}
+    .brand-title strong{letter-spacing:.3px}
+    .brand-title span{font-size:12px;color:var(--muted)}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .links a{
+      text-decoration:none; color:var(--muted);
+      font-size:14px; padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .cta{
+      text-decoration:none; background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020; padding:10px 14px; border-radius:14px; font-weight:700;
+      box-shadow: 0 16px 35px rgba(215,177,90,.20);
+    }
+    .cta:hover{filter:brightness(1.05)}
+
+    .btn-wa{
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--whatsapp); color:#fff;
+      padding:10px 16px; border-radius:14px; font-weight:700;
+      text-decoration:none; box-shadow: 0 10px 25px rgba(37,211,102,.25);
+    }
+    .btn-wa:hover{filter:brightness(1.08)}
+
+    .hero{padding:54px 0 26px;}
+    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center;}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border:1px solid var(--line); border-radius:999px;
+      color:var(--muted); font-size:13px;
+      background: rgba(255,255,255,.02);
+    }
+    .dot{width:9px; height:9px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 6px rgba(215,177,90,.16)}
+    h1{
+      margin:14px 0 10px;
+      font-size:44px; line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){h1{font-size:34px}}
+    .lead{color:var(--muted); font-size:16px; max-width:60ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color:var(--text);
+      padding:12px 14px; border-radius:14px;
+      text-decoration:none; font-weight:650; display:inline-flex; align-items:center; gap:10px;
+    }
+    .btn:hover{background: rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: rgba(215,177,90,.55);
+      background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:18px}
+    .hero-card-inner{
+      display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:center;
+      padding:8px;
+    }
+    .seal{
+      width:120px; height:120px; border-radius:50%;
+      overflow:hidden; border:1px solid rgba(255,255,255,.15);
+      background:#fff;
+      display:grid; place-items:center;
+    }
+    .seal img{width:100%; height:100%; object-fit:cover}
+    .hero-meta strong{display:block; font-size:18px}
+    .hero-meta p{margin:6px 0 0; color:var(--muted); font-size:14px}
+    .grid-2{
+      display:grid; grid-template-columns:1fr 1fr; gap:16px;
+      margin-top:14px;
+    }
+    @media (max-width: 520px){.grid-2{grid-template-columns:1fr}}
+    .mini{
+      padding:14px; border-radius:16px; border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .mini b{color:var(--gold)}
+    section{padding:26px 0}
+    .section-title{
+      display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+      margin-bottom:12px;
+    }
+    h2{margin:0; font-size:26px; letter-spacing:-.3px}
+    .sub{color:var(--muted); font-size:14px; max-width:65ch}
+    .cards{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media (max-width: 900px){.cards{grid-template-columns:1fr}}
+    .feature{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .feature .icon{
+      width:44px; height:44px; border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(215,177,90,.12);
+      border:1px solid rgba(215,177,90,.25);
+      margin-bottom:10px;
+      color:var(--gold);
+      font-weight:900;
+    }
+    .feature h3{margin:0 0 8px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+    .quote{
+      display:flex; gap:14px; align-items:flex-start;
+      padding:18px;
+    }
+    .quote .mark{
+      width:44px; height:44px; border-radius:16px;
+      display:grid; place-items:center;
+      background: rgba(27,77,138,.14);
+      border:1px solid rgba(27,77,138,.25);
+      color:#8fc3ff; font-size:18px;
+      flex:0 0 auto;
+    }
+    .quote p{margin:0; color:var(--muted)}
+    .quote b{color:var(--text)}
+    .contact{
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){.contact{grid-template-columns:1fr}}
+    form{
+      padding:16px; border:1px solid var(--line); border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+    }
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, textarea, select{
+      width:100%; padding:12px 12px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color:var(--text); outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(215,177,90,.6)}
+    textarea{min-height:120px; resize:vertical}
+    .form-row{display:flex; gap:12px}
+    @media (max-width: 520px){.form-row{flex-direction:column; gap:0}}
+    .submit-btn{
+      width:100%; margin-top:14px; padding:13px 14px; border-radius:14px;
+      border:none; cursor:pointer; font-weight:700; font-size:15px;
+      background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020;
+    }
+    .submit-btn:disabled{opacity:.6; cursor:not-allowed}
+    .form-status{
+      margin-top:12px; font-size:14px; padding:10px 12px; border-radius:12px;
+      display:none;
+    }
+    .form-status.ok{display:block; background:rgba(37,211,102,.12); border:1px solid rgba(37,211,102,.35); color:#a9f5c4}
+    .form-status.err{display:block; background:rgba(220,60,60,.12); border:1px solid rgba(220,60,60,.35); color:#ffb3b3}
+    footer{
+      padding:26px 0 40px; border-top: 1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .foot-grid{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+
+    /* Bouton Flottant WhatsApp */
+    .float-wa {
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:25px;
+      right:25px;
+      background-color:#25d366;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      font-size:30px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+      z-index:100;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+    }
+    .float-wa:hover { filter: brightness(1.1); }
+  </style>
+</head>
+<body>
+
+<!-- Bouton Flottant WhatsApp -->
+<a href="https://wa.me/14016625655?text=Bonjour,%20je%20souhaite%20contacter%20un%20responsable%20de%20SolidHand%20International." class="float-wa" target="_blank" title="Écrire sur WhatsApp">
+  💬
+</a>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigation principale">
+      <a class="brand" href="#accueil">
+        <div class="logo">
+          <img src="logo.jpg" alt="SolidHand International logo">
+        </div>
+        <div class="brand-title">
+          <strong>SolidHand International</strong>
+          <span>Une main tendue pour un avenir meilleur</span>
+        </div>
+      </a>
+
+      <div class="links">
+        <a href="#mission">Mission</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#equipe">Équipe</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="cta" href="#contact">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="accueil" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Entraide • Solidarité • Accompagnement</div>
+          <h1>SolidHand International</h1>
+          <p class="lead">
+            La main symbolise l’entraide et l’accompagnement des personnes vulnérables.
+            Le cœur au centre reflète l’amour, la compassion et l’engagement humain qui guident nos actions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#programmes">Découvrir nos actions</a>
+            <a class="btn-wa" href="https://wa.me/14016625655?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus%20sur%20SolidHand%20International." target="_blank">
+              💬 Parler à un responsable
+            </a>
+          </div>
+        </div>
+
+        <div class="card hero-card">
+          <div class="hero-card-inner">
+            <div class="seal" aria-hidden="true">
+              <img src="logo.jpg" alt="">
+            </div>
+            <div class="hero-meta">
+              <strong>Mission sociale</strong>
+              <p>Améliorer les conditions de vie des personnes démunies grâce à des actions concrètes.</p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="mini"><b>Siège</b><br>États-Unis</div>
+            <div class="mini"><b>Bureau Local</b><br>Lomé, Togo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Notre mission</h2>
+        <div class="sub">Des actions concrètes pour soutenir les plus vulnérables et favoriser l’autonomisation.</div>
+      </div>
+
+      <div class="card quote">
+        <div class="mark">“</div>
+        <p>
+          Chez <b>SolidHand International</b>, nous travaillons à améliorer les conditions de vie des personnes démunies
+          à travers des actions concrètes : assistance, soutien, accompagnement et initiatives humanitaires.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="programmes">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Programmes & actions</h2>
+        <div class="sub">Nos axes d’intervention actuels.</div>
+      </div>
+
+      <div class="cards">
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h3>Assistance aux familles en difficulté</h3>
+          <p>Réponse aux besoins essentiels et accompagnement social.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🫶</div>
+          <h3>Soutien aux orphelins & veuves</h3>
+          <p>Solidarité et soutien ciblé pour les personnes vulnérables.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🎓</div>
+          <h3>Jeunes : emploi & autonomisation</h3>
+          <p>Parcours vers l’emploi, développement et accompagnement.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🌍</div>
+          <h3>Actions humanitaires & sociales</h3>
+          <p>Interventions dans les communautés et projets de terrain.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📚</div>
+          <h3>Éducation & solidarité</h3>
+          <p>Promotion de l’éducation, de la solidarité et du développement durable.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🏗️</div>
+          <h3>Développement durable</h3>
+          <p>Des actions durables pour un changement durable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Équipe et Direction -->
+  <section id="equipe" style="padding:60px 0;">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Notre Équipe Dirigeante</h2>
+        <div class="sub">Des leaders engagés au service d'une vision humanitaire durable</div>
+      </div>
+
+      <!-- Président-Fondateur -->
+      <div class="card" style="padding:24px; margin-bottom:24px;">
+        <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+          <div style="width:140px; height:170px; border-radius:16px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+            <img src="president-fondateur.jpg" alt="Président-Fondateur" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="flex:1; min-width:260px;">
+            <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Fondateur & Direction générale</span>
+            <h3 style="margin:6px 0 4px; font-size:22px;">Président-Fondateur</h3>
+            <p style="color:var(--muted); font-size:14px; margin:0 0 12px;">SolidHand International</p>
+            <p style="color:var(--muted); font-size:14px; line-height:1.6; margin:0;">
+              Définit la vision stratégique, oriente les programmes humanitaires majeurs et garantit le respect des valeurs fondamentales de l'organisation à l'échelle internationale.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grille des responsables -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+        
+        <!-- CARTE DIRECTRICE EXÉCUTIVE -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; gap:16px; align-items:center;">
+            <div style="width:110px; height:130px; border-radius:14px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="directrice.jpg" alt="Directrice Exécutive" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Direction</span>
+              <h3 style="margin:4px 0 2px; font-size:18px;">Directrice Exécutive</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0 0 8px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Assure la gestion opérationnelle, la coordination des projets et le suivi administratif et stratégique.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARTE CONSEILLER -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; gap:16px; align-items:center;">
+            <div style="width:110px; height:130px; border-radius:14px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="conseillere.jpg" alt="Conseiller" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Conseil & Stratégie</span>
+              <h3 style="margin:4px 0 2px; font-size:18px;">Conseiller</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0 0 8px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Apporte son expertise stratégique, oriente les projets clés et veille à la bonne conduite des visions globales.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARTE MARKETING DIGITAL -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; gap:16px; align-items:center;">
+            <div style="width:110px; height:130px; border-radius:14px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="Digital-marketing.jpg" alt="Marketing Digital" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Marketing</span>
+              <h3 style="margin:4px 0 2px; font-size:18px;">Marketing Digital</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0 0 8px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Pilote la stratégie digitale, la visibilité de l'organisation et la sensibilisation sur les réseaux sociaux.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secrétaire -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; gap:16px; align-items:center;">
+            <div style="width:110px; height:130px; border-radius:14px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="Secretaire.jpg" alt="Secrétaire" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Administration</span>
+              <h3 style="margin:4px 0 2px; font-size:18px;">Secrétaire</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0 0 8px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Gère l'accueil, les correspondances officielles et la documentation administrative.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Informations Institutionnelles / Siège -->
+  <section style="padding:40px 0;">
+    <div class="wrap">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <div class="card" style="padding:24px; text-align:center;">
+          <h3 style="color:var(--gold); font-size:22px; margin-bottom:8px;">États-Unis</h3>
+          <p style="font-weight:bold; margin:0 0 8px 0;">Siège Social</p>
+          <p style="color:var(--muted); font-size:13px; margin:0; line-height:1.4;">
+            Siège principal basé aux États-Unis & Bureau opérationnel à Lomé, Togo.
+          </p>
+        </div>
+        <div class="card" style="padding:24px; text-align:center;">
+          <h3 style="color:var(--gold); font-size:22px; margin-bottom:8px;">100% Transparent</h3>
+          <p style="font-weight:bold; margin:0 0 8px 0;">Rapports Financiers</p>
+          <p style="color:var(--muted); font-size:13px; margin:0; line-height:1.4;">
+            Gestion transparente soumise à un bilan annuel et à une gouvernance rigoureuse.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Contactez-nous</h2>
+        <div class="sub">Une question ou une proposition de partenariat ? Envoyez-nous un message.</div>
+      </div>
+
+      <div class="contact">
+        <form id="contactForm" action="https://formspree.io/f/xqaaolrr" method="POST">
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" required placeholder="Votre nom">
+            </div>
+            <div style="flex:1">
+              <label for="email">Adresse Email</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
+          </div>
+          <label for="subject">Sujet</label>
+          <input type="text" id="subject" name="subject" required placeholder="Motif de votre message">
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Écrivez votre message ici..."></textarea>
+          
+          <button type="submit" class="submit-btn">Envoyer le message</button>
+        </form>
+
+        <div class="card" style="padding:24px;">
+          <h3 style="margin-top:0; color:var(--gold);">Nos coordonnées</h3>
+          <p style="color:var(--muted); font-size:14px; line-height:1.8;">
+            📍 <b>Siège social :</b> États-Unis<br>
+            📍 <b>Bureau opérationnel :</b> Lomé, Togo<br>
+            💬 <b>WhatsApp direct :</b> +1 401 662 5655<br>
+            🌐 <b>Site web :</b> www.solidhandinternational.org
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>© 2026 SolidHand International. Tous droits réservés.</div>
+      <div>Une main tendue pour un avenir meilleur</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+```
