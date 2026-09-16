@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolidHand International</title>
+  <meta name="description" content="SolidHand International – entraide, solidarité et accompagnement des personnes vulnérables." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="apple-touch-icon" href="logo.jpg">
+
+  <!-- Partage Social / Open Graph -->
+  <meta property="og:title" content="SolidHand International - Une main tendue pour un avenir meilleur" />
+  <meta property="og:description" content="Organisation humanitaire dédiée à l'accompagnement et au soutien des personnes vulnérables." />
+  <meta property="og:image" content="https://www.solidhandinternational.org/logo.jpg" />
+  <meta property="og:url" content="https://www.solidhandinternational.org" />
+  <meta property="og:type" content="website" />
+  
+  <meta name="google-site-verification" content="E_BInr1ndgUx9PdOQAMVSNvqrViQT95wIrf9yoAFQ_0" />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4RG1505RE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P4RG1505RE');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121c33;
+      --text:#e9eefc;
+      --muted:#a9b4d6;
+      --gold:#d7b15a;
+      --blue:#1b4d8a;
+      --whatsapp:#25D366;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1000px 600px at 70% -10%, rgba(215,177,90,.25), transparent 55%),
+        radial-gradient(900px 500px at 10% 0%, rgba(27,77,138,.35), transparent 55%),
+        linear-gradient(180deg, #070c16 0%, var(--bg) 70%, #070c16 100%);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.85);
+      border-bottom: 1px solid var(--line);
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .logo{
+      width:52px; height:52px; border-radius:50%;
+      background:#fff; display:grid; place-items:center;
+      overflow:hidden; border:1px solid rgba(0,0,0,.15);
+      flex-shrink:0;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand-title{display:flex; flex-direction:column}
+    .brand-title strong{letter-spacing:.3px}
+    .brand-title span{font-size:12px;color:var(--muted)}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .links a{
+      text-decoration:none; color:var(--muted);
+      font-size:14px; padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .cta{
+      text-decoration:none; background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020; padding:10px 14px; border-radius:14px; font-weight:700;
+      box-shadow: 0 16px 35px rgba(215,177,90,.20);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.05)}
+
+    .btn-wa{
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--whatsapp); color:#fff;
+      padding:10px 16px; border-radius:14px; font-weight:700;
+      text-decoration:none; box-shadow: 0 10px 25px rgba(37,211,102,.25);
+    }
+    .btn-wa:hover{filter:brightness(1.08)}
+
+    .hero{padding:40px 0 26px;}
+    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center;}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border:1px solid var(--line); border-radius:999px;
+      color:var(--muted); font-size:13px;
+      background: rgba(255,255,255,.02);
+    }
+    .dot{width:9px; height:9px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 6px rgba(215,177,90,.16)}
+    h1{
+      margin:14px 0 10px;
+      font-size:44px; line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){h1{font-size:32px}}
+    .lead{color:var(--muted); font-size:16px; max-width:60ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color:var(--text);
+      padding:12px 14px; border-radius:14px;
+      text-decoration:none; font-weight:650; display:inline-flex; align-items:center; gap:10px;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: rgba(215,177,90,.55);
+      background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:18px}
+    .hero-card-inner{
+      display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:center;
+      padding:8px;
+    }
+    @media (max-width: 480px){
+      .hero-card-inner{grid-template-columns:1fr; text-align:center}
+      .seal{margin:0 auto}
+    }
+    .seal{
+      width:120px; height:120px; border-radius:50%;
+      overflow:hidden; border:1px solid rgba(255,255,255,.15);
+      background:#fff;
+      display:grid; place-items:center;
+    }
+    .seal img{width:100%; height:100%; object-fit:cover}
+    .hero-meta strong{display:block; font-size:18px}
+    .hero-meta p{margin:6px 0 0; color:var(--muted); font-size:14px}
+    .grid-2{
+      display:grid; grid-template-columns:1fr 1fr; gap:16px;
+      margin-top:14px;
+    }
+    @media (max-width: 520px){.grid-2{grid-template-columns:1fr}}
+    .mini{
+      padding:14px; border-radius:16px; border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .mini b{color:var(--gold)}
+    section{padding:30px 0}
+    .section-title{
+      display:flex; flex-direction:column; gap:6px;
+      margin-bottom:20px;
+    }
+    h2{margin:0; font-size:26px; letter-spacing:-.3px}
+    .sub{color:var(--muted); font-size:14px; max-width:65ch}
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .team-card-inner {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    @media (max-width: 480px) {
+      .team-card-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .cards{
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;
+    }
+    
+    /* Cartes interactives cliquables */
+    .feature{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      cursor:pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position:relative;
+    }
+    .feature:hover{
+      transform: translateY(-4px);
+      border-color: rgba(215,177,90,.5);
+      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+      background: rgba(255,255,255,.04);
+    }
+    .feature .icon{
+      width:44px; height:44px; border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(215,177,90,.12);
+      border:1px solid rgba(215,177,90,.25);
+      margin-bottom:12px;
+      color:var(--gold);
+      font-weight:900;
+    }
+    .feature h3{margin:0 0 8px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+    .click-hint {
+      margin-top:12px;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      font-size:12px;
+      color:var(--gold);
+      font-weight:600;
+    }
+
+    /* Fenêtre modale */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(7, 12, 22, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      max-width: 550px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      animation: modalIn 0.25s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      color: var(--text);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid; place-items: center;
+      font-size: 16px;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.15); }
+    .modal-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .modal-icon {
+      width: 50px; height: 50px; border-radius: 14px;
+      background: rgba(215,177,90,.15); border: 1px solid rgba(215,177,90,.3);
+      display: grid; place-items: center; font-size: 24px; flex-shrink: 0;
+    }
+    .modal-title h3 { margin: 0; font-size: 20px; }
+    .modal-title span { font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .modal-body { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .modal-body ul { padding-left: 20px; margin: 12px 0; }
+    .modal-body li { margin-bottom: 6px; }
+
+    .quote{
+      display:flex; gap:14px; align-items:flex-start;
+      padding:18px;
+    }
+    .quote .mark{
+      width:44px; height:44px; border-radius:16px;
+      display:grid; place-items:center;
+      background: rgba(27,77,138,.14);
+      border:1px solid rgba(27,77,138,.25);
+      color:#8fc3ff; font-size:18px;
+      flex:0 0 auto;
+    }
+    .quote p{margin:0; color:var(--muted)}
+    .quote b{color:var(--text)}
+    .contact{
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){.contact{grid-template-columns:1fr}}
+    form{
+      padding:16px; border:1px solid var(--line); border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+    }
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, textarea, select{
+      width:100%; padding:12px 12px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color:var(--text); outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(215,177,90,.6)}
+    textarea{min-height:120px; resize:vertical}
+    .form-row{display:flex; gap:12px}
+    @media (max-width: 520px){.form-row{flex-direction:column; gap:0}}
+    .submit-btn{
+      width:100%; margin-top:14px; padding:13px 14px; border-radius:14px;
+      border:none; cursor:pointer; font-weight:700; font-size:15px;
+      background: linear-gradient(135deg, rgba(215,177,90,.95), rgba(215,177,90,.55));
+      color:#0a1020;
+    }
+    .submit-btn:disabled{opacity:0.6; cursor:not-allowed;}
+    footer{
+      padding:26px 0 40px; border-top: 1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .foot-grid{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+
+    .float-wa {
+      position:fixed;
+      width:56px;
+      height:56px;
+      bottom:20px;
+      right:20px;
+      background-color:#25d366;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      font-size:28px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+      z-index:100;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+    }
+    .float-wa:hover { filter: brightness(1.1); }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/14016625655?text=Bonjour,%20je%20souhaite%20contacter%20un%20responsable%20de%20SolidHand%20International." class="float-wa" target="_blank" title="Écrire sur WhatsApp">
+  💬
+</a>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigation principale">
+      <a class="brand" href="#accueil">
+        <div class="logo">
+          <img src="logo.jpg" alt="SolidHand International logo">
+        </div>
+        <div class="brand-title">
+          <strong>SolidHand International</strong>
+          <span>Une main tendue pour un avenir meilleur</span>
+        </div>
+      </a>
+
+      <div class="links">
+        <a href="#mission">Mission</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#equipe">Équipe</a>
+        <a href="#soutenir">Soutenir</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="cta" href="#soutenir">Faire un don</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="accueil" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Entraide • Solidarité • Accompagnement</div>
+          <h1>SolidHand International</h1>
+          <p class="lead">
+            La main symbolise l’entraide et l’accompagnement des personnes vulnérables.
+            Le cœur au centre reflète l’amour, la compassion et l’engagement humain qui guident nos actions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#soutenir">Soutenir nos projets</a>
+            <a class="btn-wa" href="https://wa.me/14016625655?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus%20sur%20SolidHand%20International." target="_blank">
+              💬 Parler à un responsable
+            </a>
+          </div>
+        </div>
+
+        <div class="card hero-card">
+          <div class="hero-card-inner">
+            <div class="seal" aria-hidden="true">
+              <img src="logo.jpg" alt="Logo SolidHand">
+            </div>
+            <div class="hero-meta">
+              <strong>Mission sociale</strong>
+              <p>Améliorer les conditions de vie des personnes démunies grâce à des actions concrètes.</p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="mini"><b>Siège</b><br>États-Unis</div>
+            <div class="mini"><b>Bureau Local</b><br>Lomé, Togo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Notre mission</h2>
+        <div class="sub">Des actions concrètes pour soutenir les plus vulnérables et favoriser l’autonomisation.</div>
+      </div>
+
+      <div class="card quote">
+        <div class="mark">“</div>
+        <p>
+          Chez <b>SolidHand International</b>, nous travaillons à améliorer les conditions de vie des personnes démunies
+          à travers des actions concrètes : assistance, soutien, accompagnement et initiatives humanitaires.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Programmes interactifs -->
+  <section id="programmes">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Programmes & actions</h2>
+        <div class="sub">Cliquez sur une carte pour découvrir les détails de chaque programme.</div>
+      </div>
+
+      <div class="cards">
+        <div class="feature" onclick="openProgramModal('familles')">
+          <div class="icon">🤝</div>
+          <h3>Assistance aux familles</h3>
+          <p>Réponse aux besoins essentiels et accompagnement social.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+
+        <div class="feature" onclick="openProgramModal('orphelins')">
+          <div class="icon">🫶</div>
+          <h3>Soutien aux orphelins & veuves</h3>
+          <p>Solidarité et soutien ciblé pour les personnes vulnérables.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+
+        <div class="feature" onclick="openProgramModal('jeunes')">
+          <div class="icon">🎓</div>
+          <h3>Jeunes & Autonomisation</h3>
+          <p>Parcours vers l’emploi, développement et accompagnement.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+
+        <div class="feature" onclick="openProgramModal('humanitaire')">
+          <div class="icon">🌍</div>
+          <h3>Actions humanitaires</h3>
+          <p>Interventions dans les communautés et projets de terrain.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+
+        <div class="feature" onclick="openProgramModal('education')">
+          <div class="icon">📚</div>
+          <h3>Éducation & solidarité</h3>
+          <p>Promotion de l’éducation et de la solidarité.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+
+        <div class="feature" onclick="openProgramModal('durable')">
+          <div class="icon">🏗️</div>
+          <h3>Développement durable</h3>
+          <p>Des actions durables pour un changement réel.</p>
+          <span class="click-hint">En savoir plus ➔</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Équipe complète -->
+  <section id="equipe">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Notre Direction & Équipe</h2>
+        <div class="sub">Des leaders engagés au service d'une vision humanitaire durable.</div>
+      </div>
+
+      <div class="card" style="padding:24px; margin-bottom:16px;">
+        <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+          <div style="width:140px; height:170px; border-radius:16px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+            <img src="president-fondateur.jpg" alt="Président-Fondateur" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="flex:1; min-width:260px;">
+            <span style="color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Fondation & Leadership</span>
+            <h3 style="margin:6px 0 4px; font-size:22px;">Président-Fondateur</h3>
+            <p style="color:var(--muted); font-size:14px; margin:0 0 10px;">SolidHand International</p>
+            <p style="color:var(--muted); font-size:14px; margin:0; line-height:1.5;">
+              Définit la vision stratégique, oriente les programmes humanitaires majeurs et garantit le respect des valeurs fondamentales de l'organisation à l'échelle internationale.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="vp-administrative.jpg" alt="Vice-Présidente Administrative" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Direction</span>
+              <h3 style="margin:2px 0; font-size:16px;">Vice-Présidente Administrative</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Supervise la gestion administrative et la coordination opérationnelle.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="directrice.jpg" alt="Directrice Exécutive" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Direction</span>
+              <h3 style="margin:2px 0; font-size:16px;">Directrice Exécutive</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Assure la gestion opérationnelle et le suivi stratégique.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="tresorier.jpg" alt="Trésorier Général" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Finance</span>
+              <h3 style="margin:2px 0; font-size:16px;">Trésorier Général</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Gère la comptabilité, le suivi budgétaire et la transparence financière.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="conseillere.jpg" alt="Conseiller" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Conseil & Stratégie</span>
+              <h3 style="margin:2px 0; font-size:16px;">Conseiller</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Apporte son expertise stratégique et oriente les projets clés.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="Digital-marketing.jpg" alt="Marketing Digital" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Marketing</span>
+              <h3 style="margin:2px 0; font-size:16px;">Marketing Digital</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Pilote la stratégie digitale, la visibilité et la sensibilisation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="Administrative&logistique.jpg" alt="Administrative & Logistique" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Logistique</span>
+              <h3 style="margin:2px 0; font-size:16px;">Administrative & Logistique</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Coordonne la logistique matérielle et l'organisation du terrain.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="team-card-inner">
+            <div style="width:100px; height:120px; border-radius:12px; overflow:hidden; border:1px solid var(--line); flex-shrink:0;">
+              <img src="Secretaire.jpg" alt="Secrétaire" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <span style="color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase;">Administration</span>
+              <h3 style="margin:2px 0; font-size:16px;">Secrétaire</h3>
+              <p style="color:var(--muted); font-size:12px; margin:0 0 6px;">SolidHand International</p>
+              <p style="color:var(--muted); font-size:12px; margin:0;">Gère l'accueil, les correspondances et la documentation officielle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Soutenir -->
+  <section id="soutenir">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Soutenir nos actions</h2>
+        <div class="sub">Participez à l'impact social de SolidHand International.</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <div class="card" style="padding:20px;">
+          <h3 style="margin-top:0; color:var(--gold);">💚 Faire un don ou une contribution</h3>
+          <p style="color:var(--muted); font-size:14px; line-height:1.6;">
+            Vos contributions permettent de financer directement les kits scolaires, la nourriture et l'accompagnement des familles.
+          </p>
+          <a class="btn-wa" href="https://wa.me/14016625655?text=Bonjour,%20je%20souhaite%20faire%20un%20don%20ou%20soutenir%20SolidHand%20International." target="_blank" style="width:100%; justify-content:center; margin-top:10px;">
+            Obtenir les modalités de don (T-Money / RIB)
+          </a>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3 style="margin-top:0; color:var(--gold);">📄 Dossier Partenaires (PDF)</h3>
+          <p style="color:var(--muted); font-size:14px; line-height:1.6;">
+            Vous êtes un investisseur, une ONG ou une entreprise ? Consultez notre présentation institutionnelle complète.
+          </p>
+          <a class="btn" href="brochure.pdf" download style="width:100%; justify-content:center; margin-top:10px; border-color:var(--gold); color:var(--gold);">
+            📥 Télécharger la présentation (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Contactez-nous</h2>
+        <div class="sub">Une question ou une proposition de partenariat ? Envoyez-nous un message.</div>
+      </div>
+
+      <div class="contact">
+        <!-- Formulaire Web3Forms -->
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="105242fe-84eb-4668-90ea-bfbca394ad0e">
+          <input type="hidden" name="from_name" value="Site Web SolidHand">
+          <input type="hidden" name="subject" value="Nouveau message de contact - SolidHand">
+
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" required placeholder="Votre nom">
+            </div>
+            <div style="flex:1">
+              <label for="email">Adresse Email</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
+          </div>
+
+          <label for="subject_input">Sujet</label>
+          <input type="text" id="subject_input" name="custom_subject" required placeholder="Motif de votre message">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Écrivez votre message ici..."></textarea>
+
+          <button type="submit" id="submitBtn" class="submit-btn">Envoyer le message</button>
+
+          <div id="formStatus" style="margin-top:12px; font-size:14px; padding:10px 12px; border-radius:12px; display:none;"></div>
+        </form>
+
+        <div class="card" style="padding:20px;">
+          <h3 style="margin-top:0; color:var(--gold);">Nos coordonnées</h3>
+          <p style="color:var(--muted); font-size:14px; line-height:1.8; margin:0;">
+            📍 <b>Siège social :</b> États-Unis<br>
+            📍 <b>Bureau opérationnel :</b> Lomé, Togo<br>
+            💬 <b>WhatsApp direct :</b> +1 401 662 5655<br>
+            🌐 <b>Site web :</b> www.solidhandinternational.org
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modale d'informations de programmes -->
+<div id="programModal" class="modal-overlay" onclick="closeProgramModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeProgramModalDirect()">✕</button>
+    <div class="modal-header">
+      <div id="mIcon" class="modal-icon">🤝</div>
+      <div class="modal-title">
+        <span id="mCategory">Axe d'intervention</span>
+        <h3 id="mTitle">Titre du programme</h3>
+      </div>
+    </div>
+    <div id="mBody" class="modal-body">
+      Chargement...
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>© 2026 SolidHand International. Tous droits réservés.</div>
+      <div>Une main tendue pour un avenir meilleur</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Données des programmes pour la modale
+  const programDetails = {
+    familles: {
+      icon: "🤝",
+      category: "Programme Social",
+      title: "Assistance aux Familles Vulnérables",
+      content: `
+        <p>Ce programme répond directement aux urgences sociales et économiques des ménages en situation de précarité au Togo et dans la sous-région.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Distribution régulière de kits alimentaires et de première nécessité.</li>
+          <li>Soutien d'urgence pour le logement et les besoins sanitaires.</li>
+          <li>Accompagnement et médiation sociale pour la réinsertion familiale.</li>
+        </ul>
+      `
+    },
+    orphelins: {
+      icon: "🫶",
+      category: "Soutien Ciblé",
+      title: "Soutien aux Orphelins & Veuves",
+      content: `
+        <p>Un pôle d'action dédié à la protection et au maintien de la dignité des personnes ayant perdu leur soutien familial principal.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Parrainage de scolarité et fournitures pour les orphelins.</li>
+          <li>Aide au développement de micro-activités génératrices de revenus pour les veuves.</li>
+          <li>Soutien psychologique et accompagnement juridique.</li>
+        </ul>
+      `
+    },
+    jeunes: {
+      icon: "🎓",
+      category: "Éducation & Emploi",
+      title: "Jeunes & Autonomisation",
+      content: `
+        <p>L'avenir appartient aux jeunes. Nous les accompagnons vers l'autonomie financière et l'insertion professionnelle.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Formations pratiques aux métiers techniques et du numérique.</li>
+          <li>Mentorat et coaching pour le développement de projets entrepreneuriaux.</li>
+          <li>Octroi de bourses d'apprentissage et de stages qualifiants.</li>
+        </ul>
+      `
+    },
+    humanitaire: {
+      icon: "🌍",
+      category: "Action Terrain",
+      title: "Actions Humanitaires & Urgence",
+      content: `
+        <p>Présents sur le terrain pour apporter une aide directe et rapide lors de situations critiques ou dans les zones enclavées.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Campagnes de sensibilisation et dépistages de santé gratuits.</li>
+          <li>Interventions humanitaires ciblées dans les villages et communautés.</li>
+          <li>Partenariats stratégiques entre les antennes internationales (USA-Togo).</li>
+        </ul>
+      `
+    },
+    education: {
+      icon: "📚",
+      category: "Savoir & Avenir",
+      title: "Éducation & Solidarité",
+      content: `
+        <p>Favoriser l'accès à une éducation de qualité pour tous les enfants, sans distinction sociale.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Distribution de kits scolaires au début de chaque année académique.</li>
+          <li>Soutien à la rénovation et à l'équipement d'espaces d'apprentissage.</li>
+          <li>Soutien scolaire et cours de remise à niveau pour les élèves en difficulté.</li>
+        </ul>
+      `
+    },
+    durable: {
+      icon: "🏗️",
+      category: "Impact Long Terme",
+      title: "Développement Durable & Communautaire",
+      content: `
+        <p>Construire des solutions pérennes pour que les communautés deviennent autonomes et résilientes.</p>
+        <strong>Nos actions concrètes :</strong>
+        <ul>
+          <li>Sensibilisation aux éco-gestes et à la préservation de l'environnement.</li>
+          <li>Soutien aux initiatives d'agriculture durable et d'assainissement local.</li>
+          <li>Mise en place d'infrastructures communautaires de proximité.</li>
+        </ul>
+      `
+    }
+  };
+
+  function openProgramModal(key) {
+    const data = programDetails[key];
+    if(!data) return;
+    
+    document.getElementById('mIcon').innerText = data.icon;
+    document.getElementById('mCategory').innerText = data.category;
+    document.getElementById('mTitle').innerText = data.title;
+    document.getElementById('mBody').innerHTML = data.content;
+    
+    const modal = document.getElementById('programModal');
+    modal.style.display = 'grid';
+  }
+
+  function closeProgramModalDirect() {
+    document.getElementById('programModal').style.display = 'none';
+  }
+
+  function closeProgramModal(event) {
+    if(event.target.id === 'programModal') {
+      closeProgramModalDirect();
+    }
+  }
+
+  // Script Formulaire Web3Forms
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.innerText = "Envoi en cours...";
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+    .then(async (response) => {
+      let resJson = await response.json();
+      if (response.status == 200) {
+        status.style.display = "block";
+        status.style.background = "rgba(37,211,102,.12)";
+        status.style.border = "1px solid rgba(37,211,102,.35)";
+        status.style.color = "#a9f5c4";
+        status.innerText = "Merci ! Votre message a été envoyé avec succès.";
+        form.reset();
+      } else {
+        status.style.display = "block";
+        status.style.background = "rgba(220,60,60,.12)";
+        status.style.border = "1px solid rgba(220,60,60,.35)";
+        status.style.color = "#ffb3b3";
+        status.innerText = resJson.message || "Une erreur est survenue lors de l'envoi.";
+      }
+    })
+    .catch(error => {
+      status.style.display = "block";
+      status.style.background = "rgba(220,60,60,.12)";
+      status.style.border = "1px solid rgba(220,60,60,.35)";
+      status.style.color = "#ffb3b3";
+      status.innerText = "Impossible d'envoyer le message pour le moment.";
+    })
+    .then(function() {
+      btn.disabled = false;
+      btn.innerText = "Envoyer le message";
+    });
+  });
+</script>
+
+</body>
+</html>
